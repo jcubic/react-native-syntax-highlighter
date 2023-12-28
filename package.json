@@ -1,11 +1,11 @@
 {
   "name": "rn-syntax-highlighter",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "description": "a react native component for syntax highlighting",
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src --out-dir dist",
-    "prepublish": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -29,9 +29,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/github.com/jcubic/rn-syntax-highlighter/issues"
+    "url": "https://github.com/jcubic/rn-syntax-highlighter/issues"
   },
-  "homepage": "https://github.com/github.com/jcubic/rn-syntax-highlighter#readme",
+  "homepage": "https://github.com/jcubic/rn-syntax-highlighter#readme",
   "dependencies": {
     "react-syntax-highlighter": "^15.5.0"
   },
