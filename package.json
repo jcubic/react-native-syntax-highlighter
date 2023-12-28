@@ -1,5 +1,5 @@
 {
-  "name": "react-native-syntax-highlighter",
+  "name": "rn-syntax-highlighter",
   "version": "2.1.0",
   "description": "a react native component for syntax highlighting",
   "main": "dist/index.js",
@@ -21,6 +21,12 @@
     "react-syntax-highlighter"
   ],
   "author": "Conor Hastings",
+  "contributors": [
+    {
+      "name": "Jakub T. Jankiewicz",
+      "url": "https://jcu.bi"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/conorhastings/react-native-syntax-highlighter/issues"
