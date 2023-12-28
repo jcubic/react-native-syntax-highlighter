@@ -1,10 +1,6 @@
-# React Native Syntax Highlighter
+# React Native Syntax Highlighter (fork)
 
 Syntax highlighting component for `React Native` using <a href="https://github.com/conorhastings/react-syntax-highlighter">`react-syntax-highlighter`</a>
-
-<!--
-You can see a <a href="https://snack.expo.io/BypG26zdz">demo</a> using snack by <a href="https://expo.io">Expo</a>
--->
 
 ## With Highlight.js vdom
 
