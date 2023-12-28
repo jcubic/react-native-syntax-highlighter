@@ -2,18 +2,18 @@ import React from 'react';
 import { Text, ScrollView, Platform } from 'react-native';
 import "./prism-config.js";
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import SyntaxHighlighterPrism from 'react-syntax-highlighter/prism';
-import { createStyleObject } from 'react-syntax-highlighter/create-element';
-import { defaultStyle } from'react-syntax-highlighter/styles/hljs';
-import { prism as prismDefaultStyle } from'react-syntax-highlighter/styles/prism'; 
+import { Prism as SyntaxHighlighterPrism } from 'react-syntax-highlighter'
+import { createStyleObject } from 'react-syntax-highlighter/dist/esm/create-element';
+import { defaultStyle } from'react-syntax-highlighter/dist/esm/styles/hljs';
+import { prism as prismDefaultStyle } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const styleCache = new Map();
 
 const topLevelPropertiesToRemove = [
-  "color", 
-  "textShadow", 
-  "textAlign", 
-  "whiteSpace", 
+  "color",
+  "textShadow",
+  "textAlign",
+  "whiteSpace",
   "wordSpacing",
   "wordBreak",
   "wordWrap",
@@ -25,7 +25,10 @@ const topLevelPropertiesToRemove = [
   "MozHyphens",
   "msHyphens",
   "hyphens",
-  "fontFamily"
+  "fontFamily",
+  "WebkitBoxSizing",
+  "MozBoxSizing",
+  "boxSizing"
 ];
 
 function generateNewStylesheet({ stylesheet, highlighter }) {
@@ -140,11 +143,11 @@ function nativeRenderer({ defaultColor, fontFamily, fontSize }) {
 }
 
 
-function NativeSyntaxHighlighter({ 
-  fontFamily, 
-  fontSize, 
-  children, 
-  highlighter = "highlightjs", 
+function NativeSyntaxHighlighter({
+  fontFamily,
+  fontSize,
+  children,
+  highlighter = "highlightjs",
   style = highlighter === "prism" ? prismDefaultStyle : defaultStyle,
   ...rest
 }) {
@@ -153,10 +156,10 @@ function NativeSyntaxHighlighter({
     highlighter
   });
   const Highlighter = (
-    highlighter === "prism" 
-    ? 
-    SyntaxHighlighterPrism 
-    : 
+    highlighter === "prism"
+    ?
+    SyntaxHighlighterPrism
+    :
     SyntaxHighlighter
   );
   return (
