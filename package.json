@@ -1,6 +1,6 @@
 {
   "name": "rn-syntax-highlighter",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "a react native component for syntax highlighting",
   "main": "dist/index.js",
   "scripts": {

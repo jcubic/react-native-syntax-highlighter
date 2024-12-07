@@ -142,13 +142,14 @@ function nativeRenderer({ defaultColor, fontFamily, fontSize }) {
   }))
 }
 
-
 function NativeSyntaxHighlighter({
-  fontFamily,
-  fontSize,
+  fontFamily = Platform.OS === 'ios' ? 'Menlo-Regular' : 'monospace',
+  fontSize = 12,
   children,
   highlighter = "highlightjs",
   style = highlighter === "prism" ? prismDefaultStyle : defaultStyle,
+  PreTag = ScrollView,
+  CodeTag = ScrollView,
   ...rest
 }) {
   const { transformedStyle, defaultColor } = generateNewStylesheet({
@@ -165,6 +166,8 @@ function NativeSyntaxHighlighter({
   return (
     <Highlighter
       {...rest}
+      PreTag={PreTag}
+      CodeTag={CodeTag}
       style={transformedStyle}
       horizontal={true}
       renderer={(nativeRenderer({
@@ -177,12 +180,5 @@ function NativeSyntaxHighlighter({
     </Highlighter>
   );
 }
-
-NativeSyntaxHighlighter.defaultProps = {
-  fontFamily: Platform.OS === 'ios' ? 'Menlo-Regular' : 'monospace',
-  fontSize: 12,
-  PreTag: ScrollView,
-  CodeTag: ScrollView
-};
 
 export default NativeSyntaxHighlighter;
